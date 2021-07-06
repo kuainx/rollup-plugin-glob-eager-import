@@ -1,0 +1,31 @@
+{
+  "name": "rollup-plugin-glob-eager-import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@e.coding.net:ekuai-zhs/zhs/rollup-plugin-glob-eager-import.git"
+  },
+  "author": "KUAI",
+  "license": "MIT",
+  "dependencies": {
+    "es-module-lexer": "^0.7.1",
+    "fast-glob": "^3.2.6",
+    "magic-string": "^0.25.7"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "dynamic import",
+    "auto import",
+    "glob"
+  ],
+  "devDependencies": {
+    "rollup": "^2.52.7"
+  }
+}
