@@ -2,12 +2,12 @@ import MagicString from 'magic-string';
 import { init, parse as parseImports } from 'es-module-lexer';
 import { transformImportGlob } from './importGlob.js';
 
-export const dynamicImport = () => {
+export const globImport = () => {
   return {
-    name: 'plugin-dynamic-import',
+    name: 'plugin-glob-import',
 
     async transform(source, importer) {
-      if (!source.includes('import.meta.globEager')) {
+      if (!source.includes('import.meta.glob')) {
         return;
       }
 
@@ -27,7 +27,7 @@ export const dynamicImport = () => {
 
       for (let index = 0; index < imports.length; index++) {
         const { s: start, e: end, ss: expStart } = imports[index];
-        const isGlob = source.slice(start, end) === 'import.meta' && source.slice(end, end + 10) === '.globEager';
+        const isGlob = source.slice(start, end) === 'import.meta' && source.slice(end, end + 5) === '.glob';
         if (isGlob) {
           const { importsString, exp, endIndex } = await transformImportGlob(source, start, importer, index);
           str().prepend(importsString);
