@@ -1,9 +1,9 @@
 import { rollup } from 'rollup';
-import { dynamicImport } from '../index.js';
+import { globImport } from '../index.js';
 const build = async () => {
   const bundle = await rollup({
     input: './test/source/index.js',
-    plugins: [dynamicImport()],
+    plugins: [globImport()],
   });
   const { output } = await bundle.generate({ format: 'es' });
   console.log(output[0].code);

@@ -1,4 +1,4 @@
-const modules = import.meta.globEager('./*.js');
+const modules = import.meta.glob('./*.js');
 
 console.log(modules);
 // delete modules;

@@ -24,7 +24,6 @@ export const globImport = () => {
 
       let s;
       const str = () => s || (s = new MagicString(source));
-
       for (let index = 0; index < imports.length; index++) {
         const { s: start, e: end, ss: expStart } = imports[index];
         const isGlob = source.slice(start, end) === 'import.meta' && source.slice(end, end + 5) === '.glob';

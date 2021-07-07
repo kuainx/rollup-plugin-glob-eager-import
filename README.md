@@ -1,4 +1,4 @@
-#rollup-plugin-glob-eager-import
+# rollup-plugin-glob-eager-import
 
 - import.meta.glob
 - 效果同vite：globEager，同步导入
