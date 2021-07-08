@@ -2,7 +2,7 @@ import MagicString from 'magic-string';
 import { init, parse as parseImports } from 'es-module-lexer';
 import { transformImportGlob } from './importGlob.js';
 
-export const globImport = () => {
+export const globImport = config => {
   return {
     name: 'plugin-glob-import',
 
@@ -36,7 +36,10 @@ export const globImport = () => {
       }
 
       if (s) {
-        return { code: s.toString() };
+        return {
+          code: s.toString(),
+          map: config.sourcemap ? s.generateMap({ hires: true }) : null,
+        };
       }
     },
   };
