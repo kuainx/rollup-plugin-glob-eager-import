@@ -2,7 +2,7 @@ import MagicString from 'magic-string';
 import { init, parse as parseImports } from 'es-module-lexer';
 import { transformImportGlob } from './importGlob.js';
 
-export const globImport = config => {
+export const globImport = (config = {}) => {
   return {
     name: 'plugin-glob-import',
 
